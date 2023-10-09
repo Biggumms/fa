@@ -1,0 +1,63 @@
+/* 1) At least one element styled using an element selector */
+body {
+    font-family: arial, sans-serif;
+  }
+  
+  /* 2) At least one group of elements styled using a class */
+  .picture-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* 3) Colors! Add some colors! */
+  header {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  /* 4) Fonts! Change the fonts up! */
+  h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* 5) Aesthetic and Organized Positioning */
+  #about {
+    text-align: center;
+  }
+  
+  /* 6) Use of CSS FlexBox Layout */
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* 7) Padding, Borders, Margins when needed (will definitely relate to 5 and 6) */
+  section h2 {
+    margin-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+  }
+  
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  /* Additional styles for the profile image */
+  img[alt="profile"] {
+    border-radius: 50%;
+    max-width: 200px;
+  }
+  
