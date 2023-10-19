@@ -125,33 +125,74 @@ console.log(houseTotal(stolenItems[1]));
 console.log(houseTotal(stolenItems[2])); 
  
 // PROBLEM TWO
-// Given an object of the stolen items for a household and a string in lowercase representing a specific item, return true if that item was stolen and false if it was not. 
-
 function isStolen(obj, item) {
-
-
-
+  // Iterate through the stolenItems array
+  for (let i = 0; i < obj.length; i++) {
+    // Check if the item exists in the current object
+    if (obj[i][item] > 0) {
+      // If the item is found, return true
+      return true;
+    }
+  }
+  // If the item is not found in any of the objects, return false
+  return false;
 }
+
+// Example usage:
+const itemToCheck = "nutella_jar";
+const isItemStolen = isStolen(stolenItems, itemToCheck);
+console.log(isItemStolen); // This will return true because nutella_jar was stolen.
+
 // uncomment these out to test it out
-//console.log(houseTotal(stolenItems[0], "keys")); 
-//console.log(houseTotal(stolenItems[1], "socks"));
-//console.log(houseTotal(stolenItems[2], "spoons")); 
+console.log(houseTotal(stolenItems[0], "keys")); 
+console.log(houseTotal(stolenItems[1], "socks"));
+console.log(houseTotal(stolenItems[2], "spoons")); 
 
 
 // EXTRA CREDIT!!!!! PROBLEM THREE
 // Given an array of objects representing an entire neighborhood, return the most frequently stolen item. This is NOT the item that has been stolen from the most households, this is the item that has been stolen the most times TOTAL. 
 
 function neighborhoodTotal(arr) {
+  // Create an object to store the count of each stolen item
+  const itemCounts = {};
 
+  // Iterate through the neighborhood array
+  for (const household of arr) {
+    for (const item in household) {
+      if (household[item] > 0) {
+        // If the item was stolen from this household, increment its count
+        if (itemCounts[item]) {
+          itemCounts[item] += 1;
+        } else {
+          itemCounts[item] = 1;
+        }
+      }
+    }
+  }
 
-  return total; 
-  
+  // Find the item with the highest count
+  let mostStolenItem = null;
+  let maxCount = 0;
+
+  for (const item in itemCounts) {
+    if (itemCounts[item] > maxCount) {
+      maxCount = itemCounts[item];
+      mostStolenItem = item;
+    }
+  }
+
+  return mostStolenItem;
 }
 
+// Call the function with the provided 'stolenItems' array
+const mostFrequentlyStolenItem = neighborhoodTotal(stolenItems);
+console.log("The most frequently stolen item is:", mostFrequentlyStolenItem);
+
 // uncomment these out to test it out
-//console.log(houseTotal(stolenItems)); 
+console.log(houseTotal(stolenItems)); 
 
 
 
 // PROBLEM FOUR
 // Based on the item that has been stolen the most, who do you think the burglar is? (you won’t get marked down for getting the “wrong” answer - just give me a fun explanation for why you think it is who it is! 
+// A
