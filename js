@@ -195,4 +195,4 @@ console.log(houseTotal(stolenItems));
 
 // PROBLEM FOUR
 // Based on the item that has been stolen the most, who do you think the burglar is? (you won’t get marked down for getting the “wrong” answer - just give me a fun explanation for why you think it is who it is! 
-// A
+// A chef, because as a chef you need a lot of spoons. There is also the fact that the runner up for most stole was nutella, which is commonly used in dishes such as, A5 wagyu steaks, Beef Wellingtons, & mammoth meat balls.
