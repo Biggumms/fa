@@ -94,15 +94,35 @@ let stolenItems = [
 // Given an object of the stolen items for a household, return the total amount of items stolen (number). If nothing was robbed, return the string "Lucky you!”.
 
 function houseTotal(obj) {
+  // Initialize a variable to keep track of the total count of stolen items.
+  let totalStolen = 0;
 
+  // Loop through each room in the object.
+  for (let room of obj) {
+    // Loop through each item in the room and add its count to the total.
+    for (let item in room) {
+      totalStolen += room[item];
+    }
+  }
 
-return 
+  // Check if any items were stolen.
+  if (totalStolen === 0) {
+    return "Lucky you!";
+  } else {
+    return totalStolen;
+  }
+}
+
+// Call the function with the 'stolenItems' object.
+const totalStolenItems = houseTotal(stolenItems);
+console.log(totalStolenItems); // This will print the total count of stolen items or "Lucky you!" if nothing was stolen.
+
 
 }
 // uncomment these out to test it out
-//console.log(houseTotal(stolenItems[0])); 
-//console.log(houseTotal(stolenItems[1]));
-//console.log(houseTotal(stolenItems[2])); 
+console.log(houseTotal(stolenItems[0])); 
+console.log(houseTotal(stolenItems[1]));
+console.log(houseTotal(stolenItems[2])); 
  
 // PROBLEM TWO
 // Given an object of the stolen items for a household and a string in lowercase representing a specific item, return true if that item was stolen and false if it was not. 
